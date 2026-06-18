@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --sea-ink: #f1f5f9;
+  --sea-ink-soft: #94a3b8;
+  --lagoon: #60a5fa;
+  --lagoon-deep: #93bbfd;
+  --palm: #a78bfa;
+  --sand: #0f172a;
+  --foam: #1e293b;
+  --surface: rgba(30, 41, 59, 0.85);
+  --surface-strong: #1e293b;
+  --line: rgba(148, 163, 184, 0.15);
+  --inset-glint: rgba(255, 255, 255, 0.05);
+  --kicker: #818cf8;
+  --bg-base: #0f172a;
+  --header-bg: rgba(15, 23, 42, 0.85);
+  --chip-bg: #1e293b;
+  --chip-line: rgba(148, 163, 184, 0.15);
+  --link-bg-hover: #334155;
+  --hero-a: rgba(96, 165, 250, 0.06);
+  --hero-b: rgba(167, 139, 250, 0.04);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--sea-ink);
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--lagoon-deep);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--lagoon);
+}
+
+.page-wrap {
+  width: min(1200px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.display-title {
+  letter-spacing: -0.02em;
+}
+
+.island-shell {
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.island-shell:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+button,
+.island-shell,
+a {
+  transition: all 180ms ease;
+}
+
+.rise-in {
+  animation: rise-in 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
